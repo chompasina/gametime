@@ -25,6 +25,7 @@
 
 #### What are we using for Testing ?
 * Mocha - reference lesson above
+* Chai - Gives us assertions
 
 ----
 ## Code
