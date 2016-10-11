@@ -13,7 +13,7 @@
 ### Testing the Tray Functionality
 
 #### What is the 'tray' ?
-* Our game consists of a child in a lunchroom attempting to catch food items falling from the top of the screen.  The child's means of catching said food is a lunch tray.  There are two categories of food: _healthy_ and _unhealthy_.  Every _healthy_ food item that the child catches should stack upon the trey; the _unhealthy_ food removes a _healthy_ item from the top of the stack i.e. _unhealthy_ food does not stack.  For this iteration we are creating the basic template for said trey.
+* Our game consists of a child in a lunchroom attempting to catch food items falling from the top of the screen.  The child's means of catching said food is a lunch tray.  There are two categories of food: _healthy_ and _unhealthy_.  Every _healthy_ food item that the child catches should stack upon the tray; the _unhealthy_ food removes a _healthy_ item from the top of the stack i.e. _unhealthy_ food does not stack.  For this iteration we are creating the basic template for said tray.
 
 #### What is the 'world' ?
 * The world is essentially the canvas-- i.e. the platform upon which our game happens.
@@ -21,7 +21,7 @@
 #### What are we testing ?
 * This iteration consists of two tests:
   * Does the test exist?
-  * Can the user move the trey left and right using the left and right arrow keys?
+  * Can the user move the tray left and right using the left and right arrow keys?
 
 #### What are we using for Testing ?
 * Mocha - reference lesson above
@@ -52,7 +52,7 @@ _If you decide to change the dimensions of the canvas, edit the conditional insi
         * world (associates the tray object with the 'world' object)
           * 'world' object is essentially the canvas
         * speed
-          * how fast the trey travels upon keypress
+          * how fast the tray travels upon keypress
     * `context('with given attributes')`
       * Tests that available attributes can successfully be assigned new values.
 
