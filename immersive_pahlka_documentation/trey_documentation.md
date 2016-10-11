@@ -1,5 +1,5 @@
 # Iteration 1 Documentation
-## Initial Canvas Creation//Create Tray
+## Create Tray
 
 ----
 ### Lesson Plans Used
@@ -14,9 +14,6 @@
 
 #### What is the 'tray' ?
 * Our game consists of a child in a lunchroom attempting to catch food items falling from the top of the screen.  The child's means of catching said food is a lunch tray.  There are two categories of food: _healthy_ and _unhealthy_.  Every _healthy_ food item that the child catches should stack upon the tray; the _unhealthy_ food removes a _healthy_ item from the top of the stack i.e. _unhealthy_ food does not stack.  For this iteration we are creating the basic template for said tray.
-
-#### What is the 'world' ?
-* The world is essentially the canvas-- i.e. the platform upon which our game happens.
 
 #### What are we testing ?
 * This iteration consists of two tests:
