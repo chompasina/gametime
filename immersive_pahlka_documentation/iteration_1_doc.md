@@ -15,6 +15,9 @@
 #### What is the 'tray' ?
 * Our game consists of a child in a lunchroom attempting to catch food items falling from the top of the screen.  The child's means of catching said food is a lunch tray.  There are two categories of food: _healthy_ and _unhealthy_.  Every _healthy_ food item that the child catches should stack upon the trey; the _unhealthy_ food removes a _healthy_ item from the top of the stack i.e. _unhealthy_ food does not stack.  For this iteration we are creating the basic template for said trey.
 
+#### What is the 'world' ?
+* The world is essentially the canvas-- i.e. the platform upon which our game happens.
+
 #### What are we testing ?
 * This iteration consists of two tests:
   * Does the test exist?
@@ -24,31 +27,44 @@
 * Mocha - reference lesson above
 
 ----
-### Code
-  * Link to Test: [tray-test.js]()
-
+## Code
 #### Important Notes on Implementation :
 _ For further additions to code, one might find it beneficial to install the atom package, jshint. It helps one remain constantly mindful of JavaScript's syntactical discrepancies._
-* `npm test ./test/tray-test.js`
-  * runs individual test
-* Function Tested: `function Tray(settings)`
-  * `context('with default attributes')`
-    * Tests that our Tray is instantiated with the following attributes:
-      * width
-        * width of tray
-      * height
-        * height of tray
-      * x-coordinate
-        * horizontal position of tray relative to canvas
-      * y-coordinate
-        * vertical position of tray relative to canvas
-      * world (associates the tray object with the 'world' object)
-        * 'world' object is essentially the canvas
-      * speed
-        * how fast the trey travels upon keypress
-  * `context('with given attributes')`
-    * Tests that available attributes can successfully be assigned new values.
 
-* Functions Tested: `Tray.prototype.moveRight` & `Tray.prototype.moveLeft`
-  * `context('movement')`
-    * Tests tray's responsiveness to _left_ / _right_ keypress
+1. Link to Unit Test: [tray-test.js]() // Link to File Tested: [tray.js]()
+
+  * `npm test ./test/tray-test.js`
+    * runs individual test
+
+  * Function Tested: `function Tray(settings)`
+    * `context('with default attributes')`
+      * Tests that our Tray is instantiated with the following attributes:
+        * width
+          * width of tray
+        * height
+          * height of tray
+        * x-coordinate
+          * horizontal position of tray relative to canvas
+        * y-coordinate
+          * vertical position of tray relative to canvas
+        * world (associates the tray object with the 'world' object)
+          * 'world' object is essentially the canvas
+        * speed
+          * how fast the trey travels upon keypress
+    * `context('with given attributes')`
+      * Tests that available attributes can successfully be assigned new values.
+
+  * Functions Tested: `Tray.prototype.moveRight` // `Tray.prototype.moveLeft`
+    * `context('movement')`
+      * Tests tray's ability to move _left_ / _right_
+
+2. Link to Unit Test: [world-test.js]() // Link to file tested: [world.js]()
+  * `npm test ./test/world-test.js`
+    * runs individual test
+
+  * Function Tested: `function World(width, height)`
+    *
+
+  * Functions Tested: `World.proptype.rightArrow` // `World.prototype.left`
+    * `context('with default attributes')`
+      * Tests that when right arrow is pressed, the the tray moves accordingly / vise-versa 
