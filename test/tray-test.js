@@ -94,7 +94,7 @@ describe('moveRight()', function(){
       let tray = new Tray();
       assert.equal(tray.x, 250);
       tray.moveRight();
-      assert .isAbove(tray.x, 250);
+      assert.isAbove(tray.x, 250);
     });
   });
 });
