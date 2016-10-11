@@ -1,4 +1,6 @@
-# Game Time Starter Kit
+### Healthy Eating Game
+
+* We started with creating the canvas and tray. 
 
 To install the dependencies:
 
