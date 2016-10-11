@@ -29,19 +29,26 @@
 
 #### Important Notes on Implementation :
 _ For further additions to code, one might find it beneficial to install the atom package, jshint. It helps one remain constantly mindful of JavaScript's syntactical discrepancies._
-* `context('with default attributes')`
-  * Tests that our Tray is instantiated with the following attributes:
-    * width
-      * width of tray
-    * height
-      * height of tray
-    * x-coordinate
-      * horizontal position of tray relative to canvas
-    * y-coordinate
-      * vertical position of tray relative to canvas
-    * world (associates the tray object with the 'world' object)
-      * 'world' object is essentially the canvas
-    * speed
-      * how fast the trey travels upon keypress
-* `context('with given attributes')`
-  * Tests that available attributes can successfully be assigned new values.
+* `npm test ./test/tray-test.js`
+  * runs individual test
+* Function Tested: `function Tray(settings)`
+  * `context('with default attributes')`
+    * Tests that our Tray is instantiated with the following attributes:
+      * width
+        * width of tray
+      * height
+        * height of tray
+      * x-coordinate
+        * horizontal position of tray relative to canvas
+      * y-coordinate
+        * vertical position of tray relative to canvas
+      * world (associates the tray object with the 'world' object)
+        * 'world' object is essentially the canvas
+      * speed
+        * how fast the trey travels upon keypress
+  * `context('with given attributes')`
+    * Tests that available attributes can successfully be assigned new values.
+
+* Functions Tested: `Tray.prototype.moveRight` & `Tray.prototype.moveLeft`
+  * `context('movement')`
+    * Tests tray's responsiveness to _left_ / _right_ keypress
