@@ -32,7 +32,7 @@
 #### Important Notes on Implementation :
 _ For further additions to code, one might find it beneficial to install the atom package, jshint. It helps one remain constantly mindful of JavaScript's syntactical discrepancies._
 
-_If you decide to change the dimensions of the canvas, edit the conditional inside of ` World.prototype.rightArrow ` accordingly -- i.e.  `function() { if (this.tray.x <= 500)` The '500' would change because the width changed._
+_If you decide to change the dimensions of the canvas, edit the conditional inside of ` World.prototype.rightArrow ` accordingly -- i.e.  `if (this.tray.x <= 500)` The '500' would change because the width changed._
 
 1. Link to Unit Test: [tray-test.js](https://github.com/chompasina/gametime/blob/master/test/tray-test.js) // Link to File Tested: [tray.js](https://github.com/chompasina/gametime/blob/master/lib/tray.js)
 
