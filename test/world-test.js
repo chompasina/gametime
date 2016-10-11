@@ -20,6 +20,5 @@ describe('World', function(){
       assert.isAbove(world.tray.x, 250);
       assert.isBelow(world.tray.x, 500);
     });
-
   });
 });
