@@ -20,17 +20,17 @@ describe('Tray', function(){
       assert.equal(tray.y, 550);
     });
 
-    it('should assign a height', function(){
+    it('should have a height', function(){
       let tray = new Tray();
       assert.equal(tray.height, 10);
     });
 
-    it('should assign a width', function(){
+    it('should have a width', function(){
       let tray = new Tray();
       assert.equal(tray.width, 100);
     });
 
-    it('should assign a speed', function(){
+    it('should have a speed', function(){
       let tray = new Tray();
       assert.equal(tray.speed, 10);
     });

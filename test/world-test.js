@@ -9,18 +9,22 @@ describe('World', function(){
       let world = new World();
       assert.isObject(world);
     });
+
     it('should have a width', function(){
       let world = new World();
       assert.equal(world.width, null);
     });
+
     it('should have a height', function(){
       let world = new World();
       assert.equal(world.height, null);
     });
+
     it('should have a tray', function(){
       let world = new World();
       assert.isObject(world.tray);
     });
+
     it('should have an overlord', function(){
       let world = new World();
       assert.isObject(world.overlord);
