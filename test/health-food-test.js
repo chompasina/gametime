@@ -34,6 +34,7 @@ describe('healthFood', function(){
 
   context('with given attributes', function(){
     it('can accept a new y-coordinate', function(){
+      let healthFood = new HealthFood({y: 50});
       assert.equal(healthFood.y, 50);
     });
   });
