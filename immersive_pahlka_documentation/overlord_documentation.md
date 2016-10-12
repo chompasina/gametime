@@ -19,7 +19,7 @@
 #### What files need to change with this new object?
   * Adding a new object required us to: 
   1) create an overlord.js file
-  2) instantiate the overlord with the world in world.js
+  2) instantiate the world with overlord in world.js
   3) write tests inside the world-test.js for the overlord instantiation
   4) add the overlord to the index.js file so it's rendered on load
   5) add the moveOverlord method to index.js 
@@ -42,7 +42,6 @@
       * height: height of overlord object
       * x-coordinate: horizontal position of overlord
       * y-coordinate: vertical position of overlord on the canvas
-      * world
       * speed: how fast our speedy overlord paces above our player at the top of the canvas 
   * Within the test context `with given attributes`
     * Tests that the available attributes can successfully assigned new values.
