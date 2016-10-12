@@ -2,6 +2,7 @@ const chai = require('chai');
 const assert = chai.assert;
 
 const HealthFood = require('../lib/health-food.js');
+const World = require('../lib/world.js');
 
 describe('healthFood', function(){
   context('with default attributes', function(){
@@ -52,6 +53,16 @@ describe('healthFood', function(){
     it('can accept a new speed', function(){
       let healthFood = new HealthFood({speed: 50});
       assert.equal(healthFood.speed, 50);
+    });
+  });
+
+  context('movement', function(){
+    it("can fall down", function(){
+      let world = new World(600, 600);
+      let healthFood = new HealthFood();
+      assert.equal(healthFood.y, 0);
+      healthFood.fallDown(world);
+      assert.isAbove(healthFood.x, 0);
     });
   });
 });
