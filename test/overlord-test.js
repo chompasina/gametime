@@ -6,33 +6,29 @@ const World = require('../lib/world.js');
 
 describe('Overlord', function(){
   context('with default attributes', function(){
+    var overlord = new Overlord();
+
     it('should be instantiated', function(){
-      let overlord = new Overlord();
       assert.isObject(overlord);
     });
 
     it('should have an x-coordinate', function(){
-      let overlord = new Overlord();
       assert.equal(overlord.x, 0);
     });
 
     it('should have a y-coordinate', function(){
-      let overlord = new Overlord();
       assert.equal(overlord.y, 10);
     });
 
     it('should have a height', function(){
-      let overlord = new Overlord();
       assert.equal(overlord.height, 100);
     });
 
     it('should have a width', function(){
-      let overlord = new Overlord();
       assert.equal(overlord.width, 100);
     });
 
     it('should have a speed', function(){
-      let overlord = new Overlord();
       assert.equal(overlord.speed, 2);
     });
   });
@@ -63,7 +59,7 @@ describe('Overlord', function(){
       assert.equal(overlord.speed, 45);
     });
   });
-  
+
   context('movement', function(){
     it('can oscillate', function(){
       let world = new World(600, 600);
