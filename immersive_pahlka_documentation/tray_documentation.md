@@ -4,11 +4,11 @@
 ----
 ### Lesson Plans Used
   * For Testing
-    * intro to Mocha//Unit level Testing in JavaScript: [lessonPlan](https://github.com/turingschool-examples/gametime-testing-journey/)
+    * Intro to Mocha//Unit level Testing in JavaScript: [lessonPlan](https://github.com/turingschool-examples/gametime-testing-journey/)
   * HTML5
-    * intro to Canvas: [lessonPlan](https://github.com/mdn/advanced-js-fundamentals-ck/blob/gh-pages/tutorials/03-object-oriented-javascript/03-canvas-and-object-oriented-javascript.md)
+    * Intro to Canvas: [lessonPlan](https://github.com/mdn/advanced-js-fundamentals-ck/blob/gh-pages/tutorials/03-object-oriented-javascript/03-canvas-and-object-oriented-javascript.md)
   * JavaScript Tools
-    * intro to JavaScript Build Tools: [lessonPlan](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/javascript-build-tools.markdown)
+    * Intro to JavaScript Build Tools: [lessonPlan](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/javascript-build-tools.markdown)
 -----
 ### Testing the Tray Functionality
 
@@ -27,7 +27,7 @@
 ----
 ## Code
 #### Important Notes on Implementation :
-_ For further additions to code, one might find it beneficial to install the atom package, jshint. It helps one remain constantly mindful of JavaScript's syntactical discrepancies._
+_For further additions to code, one might find it beneficial to install the atom package, jshint. It helps one remain constantly mindful of JavaScript's syntactical discrepancies._
 
 _If you decide to change the dimensions of the canvas, edit the conditional inside of ` World.prototype.rightArrow ` accordingly -- i.e.  `if (this.tray.x <= 500)` The '500' would change because the width changed._
 
@@ -37,7 +37,7 @@ _If you decide to change the dimensions of the canvas, edit the conditional insi
     * runs individual test
 
   * Function Tested: `function Tray(settings)`
-    * `context('with default attributes')`
+    * Within the test context `with default attributes`
       * Tests that our Tray is instantiated with the following attributes:
         * width
           * width of tray
@@ -51,7 +51,7 @@ _If you decide to change the dimensions of the canvas, edit the conditional insi
           * 'world' object is essentially the canvas
         * speed
           * how fast the tray travels upon keypress
-    * `context('with given attributes')`
+    * Within the test context `with given attributes`
       * Tests that available attributes can successfully be assigned new values.
 
   * Functions Tested: `Tray.prototype.moveRight` // `Tray.prototype.moveLeft`

@@ -3,11 +3,11 @@
 ----
 ### Lesson Plans Used
   * For Testing
-    * intro to Mocha//Unit level Testing in JavaScript: [lessonPlan](https://github.com/turingschool-examples/gametime-testing-journey/)
+    * Intro to Mocha//Unit level Testing in JavaScript: [lessonPlan](https://github.com/turingschool-examples/gametime-testing-journey/)
   * HTML5
-    * intro to Canvas: [lessonPlan](https://github.com/mdn/advanced-js-fundamentals-ck/blob/gh-pages/tutorials/03-object-oriented-javascript/03-canvas-and-object-oriented-javascript.md)
+    * Intro to Canvas: [lessonPlan](https://github.com/mdn/advanced-js-fundamentals-ck/blob/gh-pages/tutorials/03-object-oriented-javascript/03-canvas-and-object-oriented-javascript.md)
   * JavaScript Tools
-    * intro to JavaScript Build Tools: [lessonPlan](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/javascript-build-tools.markdown)
+    * Intro to JavaScript Build Tools: [lessonPlan](https://github.com/turingschool/lesson_plans/blob/master/ruby_04-apis_and_scalability/javascript-build-tools.markdown)
 -----
 ### Testing the World Functionality
 
@@ -34,7 +34,7 @@ _If you decide to change the dimensions of the canvas, edit the conditional insi
     * runs individual test
 
   * Function Tested: `function World(width, height)`
-    *
+    * WIP
 
   * Functions Tested: `World.proptype.rightArrow` // `World.prototype.left`
     * `context('with default attributes')`
