@@ -30,6 +30,19 @@ describe('World', function(){
       assert.isObject(world.overlord);
     });
   });
+
+  context('with given attributes', function(){
+    it('can accept a width', function(){
+      let world = new World(30);
+      assert.equal(world.width, 30);
+    });
+
+    it('can accept a height', function(){
+      let world = new World(30, 40);
+      assert.equal(world.height, 40);
+    });
+  });
+  
   context('movement', function(){
     it('should move to the left with left arrow keypress', function(){
       let world = new World();
