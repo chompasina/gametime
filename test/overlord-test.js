@@ -2,7 +2,6 @@ const chai = require('chai');
 const assert = chai.assert;
 
 const Overlord = require('../lib/overlord.js');
-const World = require('../lib/world.js');
 
 describe('Overlord', function(){
   context('with default attributes', function(){
@@ -28,7 +27,7 @@ describe('Overlord', function(){
     });
     it('should have a speed', function(){
       let overlord = new Overlord();
-      assert.equal(overlord.speed, 10);
+      assert.equal(overlord.speed, 2);
     });
   });
   context('with given attributes', function(){
@@ -47,11 +46,6 @@ describe('Overlord', function(){
     it('can accept a new width', function(){
       let overlord = new Overlord({width: 90});
       assert.equal(overlord.width, 90);
-    });
-    it('can accept a world', function(){
-      let world    = new World(200);
-      let overlord = new Overlord({world: world});
-      assert.equal(overlord.world.width, 200);
     });
     it('can accept a new speed', function(){
       let overlord = new Overlord({speed: 45});
