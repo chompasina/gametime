@@ -1,5 +1,6 @@
 const chai = require('chai');
 const assert = chai.assert;
+const stub = require('./support/stub');
 
 const Tray = require('../lib/tray');
 
@@ -94,5 +95,14 @@ describe('moveRight()', function(){
       assert.isAbove(tray.x, 250);
       assert.isBelow(tray.x, 500);
     });
+  });
+});
+
+describe('draw', function(){
+  it('should call fillRect on the ', function(){
+    var context = stub().of("fillRect");
+    var tray = new Tray({context: context});
+    tray.draw();
+    assert.equal(context.fillRect.calls.length, 1);
   });
 });

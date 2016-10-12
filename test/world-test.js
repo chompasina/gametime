@@ -58,6 +58,14 @@ describe('World', function(){
       assert.isBelow(world.tray.x, 500);
     });
 
-    
+    // context('draw', function(){
+    //   it('should draw the canvas', function(){
+    //     var canvas = stub();
+    //     var context = stub().of("fillRect");
+    //     var world = new World(600, 600);
+    //
+    //     assert.equal(world.)
+    //   });
+    // });
   });
 });
