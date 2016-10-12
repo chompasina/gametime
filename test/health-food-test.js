@@ -1,11 +1,12 @@
 const chai = require('chai');
 const assert = chai.assert;
 
-const healthFood = require('../lib/healthFood.js');
+const HealthFood = require('../lib/health-food.js');
 
 describe('healthFood', function(){
   context('with default attributes', function(){
-    var healthFood = new healthFood();
+    var healthFood = new HealthFood();
+
     it('should be instantiated', function(){
       assert.isObject(healthFood);
     });
