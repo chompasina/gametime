@@ -2,6 +2,7 @@ const chai = require('chai');
 const assert = chai.assert;
 
 const Overlord = require('../lib/overlord.js');
+const World = require('../lib/world.js');
 
 describe('Overlord', function(){
   context('with default attributes', function(){
@@ -60,6 +61,18 @@ describe('Overlord', function(){
     it('can accept a new speed', function(){
       let overlord = new Overlord({speed: 45});
       assert.equal(overlord.speed, 45);
+    });
+  });
+  
+  context('movement', function(){
+    it('can oscillate', function(){
+      let world = new World(600, 600);
+      let overlord = new Overlord();
+      assert.equal(overlord.x, 0);
+      assert.equal(overlord.y, 10);
+      overlord.oscillate(world);
+      assert.isAbove(overlord.x, 0);
+      assert.equal(overlord.y, 10);
     });
   });
 });
