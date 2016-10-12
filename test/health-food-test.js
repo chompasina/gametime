@@ -37,5 +37,6 @@ describe('healthFood', function(){
       let healthFood = new HealthFood({y: 50});
       assert.equal(healthFood.y, 50);
     });
+
   });
 });
