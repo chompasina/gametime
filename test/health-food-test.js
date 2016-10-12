@@ -16,7 +16,7 @@ describe('healthFood', function(){
     });
 
     it('should have a y-coordinate', function(){
-      assert.equal(healthFood.y, 10);
+      assert.equal(healthFood.y, 0);
     });
 
     it('should have a height', function(){
