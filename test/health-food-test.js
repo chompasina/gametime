@@ -33,10 +33,25 @@ describe('healthFood', function(){
   });
 
   context('with given attributes', function(){
+    it('can accept a new x-coordinate', function(){
+      let healthFood = new HealthFood({x: 50});
+      assert.equal(healthFood.x, 50);
+    });
     it('can accept a new y-coordinate', function(){
       let healthFood = new HealthFood({y: 50});
       assert.equal(healthFood.y, 50);
     });
-
+    it('can accept a new height', function(){
+      let healthFood = new HealthFood({height: 50});
+      assert.equal(healthFood.height, 50);
+    });
+    it('can accept a new width', function(){
+      let healthFood = new HealthFood({width: 50});
+      assert.equal(healthFood.width, 50);
+    });
+    it('can accept a new speed', function(){
+      let healthFood = new HealthFood({speed: 50});
+      assert.equal(healthFood.speed, 50);
+    });
   });
 });
