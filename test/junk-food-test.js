@@ -14,17 +14,19 @@ describe('junkFood', function(){
     });
 
     it('should have an x-coordinate', function(){
-      // var overlord = new Overlord();
       var world = new World(600, 600, 'context');
       var overlordX = world.overlord.x;
       var junkfoodX = world.junkFood.x;
       assert.equal(junkfoodX, overlordX);
     });
 
-    // it('should have a y-coordinate', function(){
-    //   assert.equal(junkFood.y, 0);
-    // });
-    //
+    it('should have an y-coordinate', function(){
+      var world = new World(600, 600, 'context');
+      var overlordY = world.overlord.y;
+      var junkfoodY = world.junkFood.y;
+      assert.equal(junkfoodY, overlordY);
+    });
+
     // it('should have a height', function(){
     //   assert.equal(junkFood.height, 20);
     // });
