@@ -71,34 +71,50 @@ describe('healthFood', function(){
   // });
 // });
 
-// describe('draw', function(){
-//   var context = stub().of("fillRect");
-//   var healthFood = new HealthFood({context: context});
-//   healthFood.moveHealthFood();
-// 
-//   it('should call fillRect on the canvas', function(){
-//     assert.equal(context.fillRect.calls.length, 1);
-//   });
-// 
-//   it('should pass in the x, y, width, and height to fillRect', function(){
-//     assert.equal(context.fillRect.calls[0][0], healthFood.x);
-//     assert.equal(context.fillRect.calls[0][1], healthFood.y);
-//     assert.equal(context.fillRect.calls[0][2], healthFood.width);
-//     assert.equal(context.fillRect.calls[0][3], healthFood.height);
-//   });
-// 
-//   it('should set the correct fillstyle on draw', function(){
-//     assert.equal(context.fillStyle, "green");
-//   });
-  // context('movement', function(){
-  //   it('moves down the canvas', function(){
-  //     let world = new World(600, 600);
-  //     let healthFood = new HealthFood();
-  //     assert.equal(healthFood.x, 500);
-  //     assert.equal(healthFood.y, 0);
-  //     healthFood.fallDown(world);
-  //     assert.equal(healthFood.x, 500);
-  //     assert.isAbove(healthFood.y, 0);
-  //   });
-  // });
+  context('moveHealthFood', function(){
+    var context = stub().of('beginPath').of('arc').of('closePath').of('fill');
+    var healthFood = new HealthFood({context: context});
+    healthFood.moveHealthFood();
+
+    it('should calls correct functions on context', function(){
+      assert.equal(context.beginPath.calls.length, 1);
+      assert.equal(context.arc.calls.length, 1);
+      assert.equal(context.closePath.calls.length, 1);
+      assert.equal(context.fill.calls.length, 1);
+    });
+  });
+  
+  context('dropRandomFood', function(){
+    var healthFood = new HealthFood();
+
+    it('should assign a random healthy food type', function(){
+      var newFoodHash = healthFood.dropRandomFood();
+      var newFood = new HealthFood(newFoodHash);
+      assert.notEqual(newFood['type'], 'carrot');
+    });
+    
+    it('should assign a random healthy food color', function(){
+      var newFoodHash = healthFood.dropRandomFood();
+      var newFood = new HealthFood(newFoodHash);
+      assert.notEqual(newFood['color'], 'orange');
+    });
+    
+    it('should assign a random healthy food score', function(){
+      var newFoodHash = healthFood.dropRandomFood();
+      var newFood = new HealthFood(newFoodHash);
+      assert.notEqual(newFood['score'], 100);
+    });
+    
+    it('should assign a random healthy x coordinate', function(){
+      var newFoodHash = healthFood.dropRandomFood();
+      var newFood = new HealthFood(newFoodHash);
+      assert.notEqual(newFood['x'], 500);
+    });
+    
+    it('should assign a random healthy y coordinate', function(){
+      var newFoodHash = healthFood.dropRandomFood();
+      var newFood = new HealthFood(newFoodHash);
+      assert.equal(newFood['y'], 0);
+    });  
+  });
 });
