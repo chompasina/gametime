@@ -7,10 +7,10 @@
     * Testing the Canvas Functionality/Stubbing: [lessonPlan](https://github.com/turingschool-examples/gametime-testing-journey/tree/sinon)
 
 -----
-### Testing the Tray Functionality
+### Testing the Health Food Functionality
 
-#### What is the 'tray' ?
-* Our game consists of a child in
+#### What is a 'health food' ?
+* A Health food is a _healthy_ food item.  The _healthy_ food items fall from the top of the screen and stack on top of each other when caught by the player's tray.  _Healthy_ food items improve 
 
 ----
 ## Code
