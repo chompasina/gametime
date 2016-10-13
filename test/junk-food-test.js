@@ -40,32 +40,34 @@ describe('junkFood', function(){
     });
   });
 
-  // context('with given attributes', function(){
-  //   it('can accept a new x-coordinate', function(){
-  //     let junkFood = new JunkFood({x: 50});
-  //     assert.equal(junkFood.x, 50);
-  //   });
-  //
-  //   it('can accept a new y-coordinate', function(){
-  //     let junkFood = new JunkFood({y: 50});
-  //     assert.equal(junkFood.y, 50);
-  //   });
-  //
-  //   it('can accept a new height', function(){
-  //     let junkFood = new JunkFood({height: 50});
-  //     assert.equal(junkFood.height, 50);
-  //   });
-  //
-  //   it('can accept a new width', function(){
-  //     let junkFood = new JunkFood({width: 50});
-  //     assert.equal(junkFood.width, 50);
-  //   });
-  //
-  //   it('can accept a new speed', function(){
-  //     let junkFood = new JunkFood({speed: 50});
-  //     assert.equal(junkFood.speed, 50);
-  //   });
-  // });
+  context('with given attributes', function(){
+
+    it('can accept a new x-coordinate', function(){
+      let junkFood = new JunkFood({x: 300});
+      assert.equal(junkFood.x, 300);
+    });
+
+    it('can accept a new y-coordinate', function(){
+      let junkFood = new JunkFood({y: 600});
+      assert.equal(junkFood.y, 600);
+    });
+
+    // it('can accept a new height', function(){
+    //   let junkFood = new JunkFood({height: 20});
+    //   assert.equal(junkFood.height, 20);
+    // });
+    //
+    // it('can accept a new width', function(){
+    //   let junkFood = new JunkFood({width: 150});
+    //   assert.equal(junkFood.width, 150);
+    // });
+    //
+    // it('can accept a new speed', function(){
+    //   let junkFood = new JunkFood({speed: 20});
+    //   assert.equal(junkFood.speed, 20);
+    // });
+  });
+
 
   // context('moveJunkFood', function(){
   //   var context = stub().of('beginPath').of('arc').of('closePath').of('fill');
