@@ -65,13 +65,13 @@ describe('World', function(){
 });
 
 describe('draw canvas', function(){
-  var context = stub().of("fillRect");
-  // var context = stub().of("clearRect");
+  var context = stub().of("fillRect").of("clearRect");
   var world = new World(600, 600, context);
   world.drawCanvas();
 
   it('should call fillRect and clearRect on the canvas', function(){
     assert.equal(context.fillRect.calls.length, 1);
+    assert.equal(context.clearRect.calls.length, 0);
   });
 
   it('should pass in the width, and height to fillRect', function(){
