@@ -121,4 +121,5 @@ describe('draw instance of healthFood constructor', function(){
       assert.equal(context.fill.calls.length, 1);
     });
   });
+  
 });
