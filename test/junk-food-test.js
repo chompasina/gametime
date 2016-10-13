@@ -54,15 +54,15 @@ describe('junkFood', function(){
     });
   });
 
-  // context('dropRandomFood', function(){
-  //   var junkFood = new JunkFood();
-  //
-  //   it('should assign a random healthy food type', function(){
-  //     var newFoodHash = junkFood.dropRandomFood();
-  //     var newFood = new JunkFood(newFoodHash);
-  //     assert.notEqual(newFood['type'], 'carrot');
-  //   });
-  //
+  context('dropRandomFood', function(){
+    var junkFood = new JunkFood();
+
+    it('should assign a random healthy food type', function(){
+      var newFoodHash = junkFood.dropJunkFood();
+      var newFood = new JunkFood(newFoodHash);
+      assert.notEqual(newFood['type'], 'cheeto');
+    });
+
   //   it('should assign a random healthy food color', function(){
   //     var newFoodHash = junkFood.dropRandomFood();
   //     var newFood = new JunkFood(newFoodHash);
@@ -86,5 +86,5 @@ describe('junkFood', function(){
   //     var newFood = new JunkFood(newFoodHash);
   //     assert.equal(newFood['y'], 0);
   //   });
-  // });
+  });
 });
