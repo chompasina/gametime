@@ -27,14 +27,14 @@ describe('junkFood', function(){
       assert.equal(junkfoodY, overlordY);
     });
 
-    // it('should have a height', function(){
-    //   assert.equal(junkFood.height, 20);
-    // });
-    //
-    // it('should have a width', function(){
-    //   assert.equal(junkFood.width, 20);
-    // });
-    //
+    it('should have a height', function(){
+      assert.equal(junkFood.height, 20);
+    });
+
+    it('should have a width', function(){
+      assert.equal(junkFood.width, 20);
+    });
+    
     // it('should have a speed', function(){
     //   assert.equal(junkFood.speed, 0.5);
     // });
