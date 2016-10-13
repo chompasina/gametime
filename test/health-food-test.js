@@ -61,14 +61,13 @@ describe('healthFood', function(){
   });
 
   context('moveHealthFood', function(){
-    var context = stub().of('beginPath').of('arc').of('closePath').of('fill');
+    var context = stub().of('beginPath').of('arc').of('fill');
     var healthFood = new HealthFood({context: context});
     healthFood.moveHealthFood();
 
     it('should calls correct functions on context', function(){
       assert.equal(context.beginPath.calls.length, 1);
       assert.equal(context.arc.calls.length, 1);
-      assert.equal(context.closePath.calls.length, 1);
       assert.equal(context.fill.calls.length, 1);
     });
   });

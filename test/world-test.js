@@ -84,7 +84,7 @@ describe('draw canvas', function(){
 });
 
 describe('draw', function(){
-  var context = stub().of('fillRect').of('beginPath').of('arc').of('closePath').of('fill').of('clearRect');
+  var context = stub().of('fillRect').of('beginPath').of('arc').of('fill').of('clearRect');
   var world = new World(600, 600, context);
   world.draw();
 
@@ -93,7 +93,6 @@ describe('draw', function(){
     assert.equal(context.beginPath.calls.length, 2);
     assert.equal(context.arc.calls.length, 1);
     assert.equal(context.clearRect.calls.length, 1);
-    assert.equal(context.closePath.calls.length, 2);
     assert.equal(context.fill.calls.length, 2);
 
   });
