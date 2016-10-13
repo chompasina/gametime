@@ -1,9 +1,8 @@
 const chai = require('chai');
 const assert = chai.assert;
 const stub = require('./support/stub');
-const JunkFood = require('../lib/junk-food')
-const Overlord = require('../lib/overlord')
-const World = require('../lib/world')
+const JunkFood = require('../lib/junk-food');
+const World = require('../lib/world');
 
 describe('junkFood', function(){
   context('with default attributes', function(){
@@ -69,4 +68,6 @@ describe('junkFood', function(){
       assert.notEqual(newFood['color'], 'yellow');
     });
   });
+
+
 });
