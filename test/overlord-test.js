@@ -1,6 +1,6 @@
 const chai = require('chai');
 const assert = chai.assert;
-
+const stub = require('./support/stub');
 const Overlord = require('../lib/overlord.js');
 const World = require('../lib/world.js');
 
@@ -70,5 +70,26 @@ describe('Overlord', function(){
       assert.isAbove(overlord.x, 0);
       assert.equal(overlord.y, 10);
     });
+  });
+});
+
+describe('draw', function(){
+  var context = stub().of("fillRect");
+  var overlord = new Overlord({context: context});
+  overlord.draw();
+
+  it('should call fillRect on the canvas', function(){
+    assert.equal(context.fillRect.calls.length, 1);
+  });
+
+  it('should pass in the x, y, width, and height to fillRect', function(){
+    assert.equal(context.fillRect.calls[0][0], overlord.x);
+    assert.equal(context.fillRect.calls[0][1], overlord.y);
+    assert.equal(context.fillRect.calls[0][2], overlord.width);
+    assert.equal(context.fillRect.calls[0][3], overlord.height);
+  });
+
+  it('should set the correct fillstyle on draw', function(){
+    assert.equal(context.fillStyle, "orange");
   });
 });
