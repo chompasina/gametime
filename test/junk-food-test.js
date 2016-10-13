@@ -54,7 +54,7 @@ describe('junkFood', function(){
     });
   });
 
-  context('dropRandomFood', function(){
+  context('dropJunkFood', function(){
     var junkFood = new JunkFood();
 
     it('should assign a random healthy food type', function(){
@@ -63,28 +63,10 @@ describe('junkFood', function(){
       assert.notEqual(newFood['type'], 'cheeto');
     });
 
-  //   it('should assign a random healthy food color', function(){
-  //     var newFoodHash = junkFood.dropRandomFood();
-  //     var newFood = new JunkFood(newFoodHash);
-  //     assert.notEqual(newFood['color'], 'orange');
-  //   });
-  //
-  //   it('should assign a random healthy food score', function(){
-  //     var newFoodHash = junkFood.dropRandomFood();
-  //     var newFood = new JunkFood(newFoodHash);
-  //     assert.notEqual(newFood['score'], 100);
-  //   });
-  //
-  //   it('should assign a random healthy x coordinate', function(){
-  //     var newFoodHash = junkFood.dropRandomFood();
-  //     var newFood = new JunkFood(newFoodHash);
-  //     assert.notEqual(newFood['x'], 500);
-  //   });
-  //
-  //   it('should assign a random healthy y coordinate', function(){
-  //     var newFoodHash = junkFood.dropRandomFood();
-  //     var newFood = new JunkFood(newFoodHash);
-  //     assert.equal(newFood['y'], 0);
-  //   });
+    it('should assign a random junk food color', function(){
+      var newFoodHash = junkFood.dropJunkFood();
+      var newFood = new JunkFood(newFoodHash);
+      assert.notEqual(newFood['color'], 'yellow');
+    });
   });
 });
