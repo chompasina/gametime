@@ -34,10 +34,10 @@ describe('junkFood', function(){
     it('should have a width', function(){
       assert.equal(junkFood.width, 20);
     });
-    
-    // it('should have a speed', function(){
-    //   assert.equal(junkFood.speed, 0.5);
-    // });
+
+    it('should have a speed', function(){
+      assert.equal(junkFood.speed, 0.5);
+    });
   });
 
   // context('with given attributes', function(){
