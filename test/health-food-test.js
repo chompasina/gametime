@@ -1,8 +1,8 @@
 const chai = require('chai');
 const assert = chai.assert;
 const stub = require('./support/stub');
-const HealthFood = require('../lib/health-food.js');
-const World = require('../lib/world.js');
+const HealthFood = require('../lib/health-food');
+const World = require('../lib/world');
 
 describe('healthFood', function(){
   context('with default attributes', function(){
@@ -38,38 +38,27 @@ describe('healthFood', function(){
       let healthFood = new HealthFood({x: 50});
       assert.equal(healthFood.x, 50);
     });
-    
+
     it('can accept a new y-coordinate', function(){
       let healthFood = new HealthFood({y: 50});
       assert.equal(healthFood.y, 50);
     });
-    
+
     it('can accept a new height', function(){
       let healthFood = new HealthFood({height: 50});
       assert.equal(healthFood.height, 50);
     });
-    
+
     it('can accept a new width', function(){
       let healthFood = new HealthFood({width: 50});
       assert.equal(healthFood.width, 50);
     });
-    
+
     it('can accept a new speed', function(){
       let healthFood = new HealthFood({speed: 50});
       assert.equal(healthFood.speed, 50);
     });
   });
-
-  // context('movement', function(){
-  //   it("can fall down", function(){
-  //     let world = new World(600, 600);
-  //     let healthFood = new HealthFood();
-  //     assert.equal(healthFood.y, 0);
-  //     healthFood.fallDown(world);
-  //     assert.isAbove(healthFood.x, 0);
-  //   });
-  // });
-// });
 
   context('moveHealthFood', function(){
     var context = stub().of('beginPath').of('arc').of('closePath').of('fill');
@@ -83,7 +72,7 @@ describe('healthFood', function(){
       assert.equal(context.fill.calls.length, 1);
     });
   });
-  
+
   context('dropRandomFood', function(){
     var healthFood = new HealthFood();
 
@@ -92,29 +81,29 @@ describe('healthFood', function(){
       var newFood = new HealthFood(newFoodHash);
       assert.notEqual(newFood['type'], 'carrot');
     });
-    
+
     it('should assign a random healthy food color', function(){
       var newFoodHash = healthFood.dropRandomFood();
       var newFood = new HealthFood(newFoodHash);
       assert.notEqual(newFood['color'], 'orange');
     });
-    
+
     it('should assign a random healthy food score', function(){
       var newFoodHash = healthFood.dropRandomFood();
       var newFood = new HealthFood(newFoodHash);
       assert.notEqual(newFood['score'], 100);
     });
-    
+
     it('should assign a random healthy x coordinate', function(){
       var newFoodHash = healthFood.dropRandomFood();
       var newFood = new HealthFood(newFoodHash);
       assert.notEqual(newFood['x'], 500);
     });
-    
+
     it('should assign a random healthy y coordinate', function(){
       var newFoodHash = healthFood.dropRandomFood();
       var newFood = new HealthFood(newFoodHash);
       assert.equal(newFood['y'], 0);
-    });  
+    });
   });
 });
