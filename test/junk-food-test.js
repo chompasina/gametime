@@ -15,7 +15,7 @@ describe('junkFood', function(){
 
     it('should have an x-coordinate', function(){
       var world = new World(600, 600, 'context');
-      var overlordX = world.overlord.x;
+      var overlordX = world.overlord.x + world.overlord.height;
       var junkfoodX = world.junkFood.x;
       assert.equal(junkfoodX, overlordX);
     });
@@ -40,47 +40,19 @@ describe('junkFood', function(){
     });
   });
 
-  context('with given attributes', function(){
 
-    it('can accept a new x-coordinate', function(){
-      let junkFood = new JunkFood({x: 300});
-      assert.equal(junkFood.x, 300);
+  context('moveJunkFood', function(){
+    var context = stub().of('beginPath').of('fillRect').of('closePath').of('fill');
+    var junkFood = new JunkFood({context: context});
+    junkFood.moveJunkFood();
+
+    it('should calls correct functions on context', function(){
+      assert.equal(context.beginPath.calls.length, 1);
+      assert.equal(context.fillRect.calls.length, 1);
+      assert.equal(context.closePath.calls.length, 1);
+      assert.equal(context.fill.calls.length, 1);
     });
-
-    it('can accept a new y-coordinate', function(){
-      let junkFood = new JunkFood({y: 600});
-      assert.equal(junkFood.y, 600);
-    });
-
-    // it('can accept a new height', function(){
-    //   let junkFood = new JunkFood({height: 20});
-    //   assert.equal(junkFood.height, 20);
-    // });
-    //
-    // it('can accept a new width', function(){
-    //   let junkFood = new JunkFood({width: 150});
-    //   assert.equal(junkFood.width, 150);
-    // });
-    //
-    // it('can accept a new speed', function(){
-    //   let junkFood = new JunkFood({speed: 20});
-    //   assert.equal(junkFood.speed, 20);
-    // });
   });
-
-
-  // context('moveJunkFood', function(){
-  //   var context = stub().of('beginPath').of('arc').of('closePath').of('fill');
-  //   var junkFood = new JunkFood({context: context});
-  //   junkFood.moveJunkFood();
-  //
-  //   it('should calls correct functions on context', function(){
-  //     assert.equal(context.beginPath.calls.length, 1);
-  //     assert.equal(context.arc.calls.length, 1);
-  //     assert.equal(context.closePath.calls.length, 1);
-  //     assert.equal(context.fill.calls.length, 1);
-  //   });
-  // });
 
   // context('dropRandomFood', function(){
   //   var junkFood = new JunkFood();

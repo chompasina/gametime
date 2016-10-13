@@ -89,12 +89,12 @@ describe('draw', function(){
   world.draw();
 
   it('should call all of the draw functions', function(){
-    assert.equal(context.fillRect.calls.length, 3);
-    assert.equal(context.beginPath.calls.length, 1);
+    assert.equal(context.fillRect.calls.length, 4);
+    assert.equal(context.beginPath.calls.length, 2);
     assert.equal(context.arc.calls.length, 1);
     assert.equal(context.clearRect.calls.length, 1);
-    assert.equal(context.closePath.calls.length, 1);
-    assert.equal(context.fill.calls.length, 1);
-    
+    assert.equal(context.closePath.calls.length, 2);
+    assert.equal(context.fill.calls.length, 2);
+
   });
 });
