@@ -83,3 +83,13 @@ describe('draw canvas', function(){
     assert.equal(context.fillStyle, "#3D9970");
   });
 });
+
+describe('draw', function(){
+  var context = stub().of("fillRect");
+  var world = new World(600, 600, context);
+  world.draw();
+
+  it('should call all of the draw functions', function(){
+    assert.equal(context.fillRect.calls.length, 4);
+  });
+});

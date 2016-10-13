@@ -1,6 +1,6 @@
 const chai = require('chai');
 const assert = chai.assert;
-
+const stub = require('./support/stub');
 const HealthFood = require('../lib/health-food.js');
 const World = require('../lib/world.js');
 
@@ -64,5 +64,26 @@ describe('healthFood', function(){
       healthFood.fallDown(world);
       assert.isAbove(healthFood.x, 0);
     });
+  });
+});
+
+describe('draw', function(){
+  var context = stub().of("fillRect");
+  var healthFood = new HealthFood({context: context});
+  healthFood.draw();
+
+  it('should call fillRect on the canvas', function(){
+    assert.equal(context.fillRect.calls.length, 1);
+  });
+
+  it('should pass in the x, y, width, and height to fillRect', function(){
+    assert.equal(context.fillRect.calls[0][0], healthFood.x);
+    assert.equal(context.fillRect.calls[0][1], healthFood.y);
+    assert.equal(context.fillRect.calls[0][2], healthFood.width);
+    assert.equal(context.fillRect.calls[0][3], healthFood.height);
+  });
+
+  it('should set the correct fillstyle on draw', function(){
+    assert.equal(context.fillStyle, "green");
   });
 });
