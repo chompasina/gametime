@@ -13,10 +13,30 @@ describe('stub', function(){
       var newStub = stub().of('fillRect');
       assert.isFunction(newStub.fillRect);
     });
-
-    it('will stub and replace functions', function(){
-      var newStub = stub().of('fillRect');
-      assert.isFunction(newStub.fillRect);
+    
+    it('will stub and replace this function', function(){
+      var newStub = stub().of('clearRect');
+      assert.isFunction(newStub.clearRect);
+    });
+    
+    it('will stub and replace a different function', function(){
+      var newStub = stub().of('beginPath');
+      assert.isFunction(newStub.beginPath);
+    });
+    
+    it('will stub and replace another function', function(){
+      var newStub = stub().of('arc');
+      assert.isFunction(newStub.arc);
+    });
+    
+    it('will stub and replace yet another function', function(){
+      var newStub = stub().of('closePath');
+      assert.isFunction(newStub.closePath);
+    });
+    
+    it('will stub and replace yet another function', function(){
+      var newStub = stub().of('fill');
+      assert.isFunction(newStub.fill);
     });
 
     it('handles a non-stubbed assignments', function(){
@@ -44,5 +64,6 @@ describe('stub', function(){
       newStub.fillRect('cats', 'dogs');
       assert.deepEqual(newStub.fillRect.calls[0], ['cats', 'dogs']);
     });
+    
   });
 });

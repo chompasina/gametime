@@ -1,6 +1,17 @@
-### Healthy Eating Game
+### Team
+- [Tommasina](https://github.com/chompasina)
+- [Karina](https://github.com/karinamzalez)
+- [Deb](https://github.com/deborahleehamel)
 
-* We started with creating the canvas and tray. 
+### Game Name
+
+Empty Calorie Adventure
+
+### Description
+Gametime is a Module 4 project at Turing. We are building a game with a healthy eating theme. This game will eventually be included in our Pahlka Posse's healthy eating app for children.
+
+
+### How to Run
 
 To install the dependencies:
 
