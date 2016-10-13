@@ -107,7 +107,7 @@ describe('draw', function(){
     assert.equal(context.fillRect.calls.length, 1);
   });
 
-  it('should paas in the x, y, width, and height to fillRect', function(){
+  it('should pass in the x, y, width, and height to fillRect', function(){
     assert.equal(context.fillRect.calls[0][0], tray.x);
     assert.equal(context.fillRect.calls[0][1], tray.y);
     assert.equal(context.fillRect.calls[0][2], tray.width);

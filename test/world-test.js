@@ -30,7 +30,7 @@ describe('World', function(){
   });
 
   context('with given attributes', function(){
-    var world = new World(30, 40);
+    var world = new World(30, 40, "apple");
 
     it('can accept a width', function(){
       assert.equal(world.width, 30);
@@ -38,6 +38,10 @@ describe('World', function(){
 
     it('can accept a height', function(){
       assert.equal(world.height, 40);
+    });
+
+    it('can accept a context', function(){
+      assert.equal(world.context, "apple");
     });
   });
 
@@ -57,15 +61,25 @@ describe('World', function(){
       assert.isAbove(world.tray.x, 250);
       assert.isBelow(world.tray.x, 500);
     });
+  });
+});
 
-    // context('draw', function(){
-    //   it('should draw the canvas', function(){
-    //     var canvas = stub();
-    //     var context = stub().of("fillRect");
-    //     var world = new World(600, 600);
-    //
-    //     assert.equal(world.)
-    //   });
-    // });
+describe('draw canvas', function(){
+  var context = stub().of("fillRect");
+  // var context = stub().of("clearRect");
+  var world = new World(600, 600, context);
+  world.drawCanvas();
+
+  it('should call fillRect and clearRect on the canvas', function(){
+    assert.equal(context.fillRect.calls.length, 1);
+  });
+
+  it('should pass in the width, and height to fillRect', function(){
+    assert.equal(context.fillRect.calls[0][2], world.width);
+    assert.equal(context.fillRect.calls[0][3], world.height);
+  });
+
+  it('should set the correct fillstyle on draw', function(){
+    assert.equal(context.fillStyle, "#3D9970");
   });
 });
