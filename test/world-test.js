@@ -102,5 +102,7 @@ describe('createHealthFoods', function(){
     let world = new World();
     var food = world.createHealthFoods();
     assert.isObject(food);
+    assert.equal(food.y, 0.5);
+    assert.equal(food.color, "");
   });
 });
