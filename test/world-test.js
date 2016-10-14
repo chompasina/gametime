@@ -1,7 +1,6 @@
 const chai = require('chai');
 const assert = chai.assert;
 const stub = require('./support/stub');
-
 const World = require('../lib/world');
 
 describe('World', function(){
@@ -95,5 +94,13 @@ describe('draw', function(){
     assert.equal(context.clearRect.calls.length, 1);
     assert.equal(context.fill.calls.length, 1);
 
+  });
+});
+
+describe('createHealthFoods', function(){
+  it('should return an instance of healthFood constructor', function(){
+    let world = new World();
+    var food = world.createHealthFoods();
+    assert.isObject(food);
   });
 });
