@@ -1,9 +1,8 @@
 const chai = require('chai');
 const assert = chai.assert;
 const stub = require('./support/stub');
-const JunkFood = require('../lib/junk-food')
-const Overlord = require('../lib/overlord')
-const World = require('../lib/world')
+const JunkFood = require('../lib/junk-food');
+const World = require('../lib/world');
 
 describe('junkFood', function(){
   context('with default attributes', function(){
@@ -42,14 +41,13 @@ describe('junkFood', function(){
 
 
   context('moveJunkFood', function(){
-    var context = stub().of('beginPath').of('fillRect').of('closePath').of('fill');
+    var context = stub().of('beginPath').of('fillRect').of('fill');
     var junkFood = new JunkFood({context: context});
     junkFood.moveJunkFood();
 
     it('should calls correct functions on context', function(){
       assert.equal(context.beginPath.calls.length, 1);
       assert.equal(context.fillRect.calls.length, 1);
-      assert.equal(context.closePath.calls.length, 1);
       assert.equal(context.fill.calls.length, 1);
     });
   });
@@ -69,4 +67,6 @@ describe('junkFood', function(){
       assert.notEqual(newFood['color'], 'yellow');
     });
   });
+
+
 });
