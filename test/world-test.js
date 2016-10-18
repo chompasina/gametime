@@ -79,13 +79,12 @@ describe('draw canvas', function(){
 });
 
 describe('draw', function(){
-  var context = stub().of('fillRect').of('beginPath').of('arc').of('fill').of('clearRect');
+  var context = stub().of('fillRect').of('clearRect');
   var world = new World(600, 600, context);
   world.draw();
 
   it('should call all of the draw functions', function(){
     assert.equal(context.fillRect.calls.length, 2);
-    assert.equal(context.arc.calls.length, 0);
     assert.equal(context.clearRect.calls.length, 1);
   });
 });
