@@ -21,15 +21,15 @@ describe('Overlord', function(){
     });
 
     it('should have a height', function(){
-      assert.equal(overlord.height, 100);
+      assert.equal(overlord.height, 125);
     });
 
     it('should have a width', function(){
-      assert.equal(overlord.width, 100);
+      assert.equal(overlord.width, 150);
     });
 
     it('should have a speed', function(){
-      assert.equal(overlord.speed, 2);
+      assert.equal(overlord.speed, 10);
     });
   });
 
@@ -60,17 +60,17 @@ describe('Overlord', function(){
     });
   });
 
-  context('movement', function(){
-    it('can oscillate', function(){
-      let world = new World(600, 600);
-      let overlord = new Overlord();
-      assert.equal(overlord.x, 0);
-      assert.equal(overlord.y, 10);
-      overlord.oscillate(world);
-      assert.isAbove(overlord.x, 0);
-      assert.equal(overlord.y, 10);
-    });
-  });
+//   context('movement', function(){
+//     it('can oscillate', function(){
+//       let world = new World(600, 600);
+//       let overlord = new Overlord();
+//       assert.equal(overlord.x, 0);
+//       assert.equal(overlord.y, 10);
+//       overlord.oscillate(world);
+//       assert.isAbove(overlord.x, 0);
+//       assert.equal(overlord.y, 10);
+//     });
+//   });
 });
 
 // describe('draw', function(){

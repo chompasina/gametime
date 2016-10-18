@@ -22,10 +22,6 @@ describe('World', function(){
     it('should have a tray', function(){
       assert.isObject(world.tray);
     });
-
-    it('should have an overlord', function(){
-      assert.isObject(world.overlord);
-    });
   });
 
   context('with given attributes', function(){
@@ -40,7 +36,7 @@ describe('World', function(){
     });
 
     it('can accept a context', function(){
-      assert.equal(world.context, "apple");
+      assert.equal(world.ctx, "apple");
     });
   });
 
