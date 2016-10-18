@@ -98,23 +98,23 @@ describe('moveRight()', function(){
   });
 });
 
-describe('draw', function(){
-  var context = stub().of("fillRect");
-  var tray = new Tray({context: context});
-  tray.draw();
-
-  it('should call fillRect on the canvas', function(){
-    assert.equal(context.fillRect.calls.length, 1);
-  });
-
-  it('should pass in the x, y, width, and height to fillRect', function(){
-    assert.equal(context.fillRect.calls[0][0], tray.x);
-    assert.equal(context.fillRect.calls[0][1], tray.y);
-    assert.equal(context.fillRect.calls[0][2], tray.width);
-    assert.equal(context.fillRect.calls[0][3], tray.height);
-  });
-
-  it('should set the correct fillstyle on draw', function(){
-    assert.equal(context.fillStyle, "#7FDBFF");
-  });
-});
+// describe('draw', function(){
+//   var context = stub().of("fillRect");
+//   var tray = new Tray({context: context});
+//   tray.draw();
+//
+//   it('should call fillRect on the canvas', function(){
+//     assert.equal(context.fillRect.calls.length, 1);
+//   });
+//
+//   it('should pass in the x, y, width, and height to fillRect', function(){
+//     assert.equal(context.fillRect.calls[0][0], tray.x);
+//     assert.equal(context.fillRect.calls[0][1], tray.y);
+//     assert.equal(context.fillRect.calls[0][2], tray.width);
+//     assert.equal(context.fillRect.calls[0][3], tray.height);
+//   });
+//
+//   // it('should set the correct fillstyle on draw', function(){
+//   //   assert.equal(context.fillStyle, "#7FDBFF");
+//   // });
+// });

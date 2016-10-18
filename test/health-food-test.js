@@ -1,6 +1,6 @@
 const chai = require('chai');
 const assert = chai.assert;
-const stub = require('./support/stub');
+// const stub = require('./support/stub');
 const HealthFood = require('../lib/health-food');
 
 describe('healthFood', function(){
@@ -20,11 +20,11 @@ describe('healthFood', function(){
     });
 
     it('should have a height', function(){
-      assert.equal(healthFood.height, 20);
+      assert.equal(healthFood.height, 40);
     });
 
     it('should have a width', function(){
-      assert.equal(healthFood.width, 20);
+      assert.equal(healthFood.width, 40);
     });
 
     it('should have a speed', function(){
