@@ -30,8 +30,13 @@ describe('stub', function(){
     });
 
     it('will stub and replace yet another function', function(){
-      var newStub = stub().of('fill');
-      assert.isFunction(newStub.fill);
+      var newStub = stub().of('drawImage');
+      assert.isFunction(newStub.drawImage);
+    });
+
+    it('will stub and replace yet another function', function(){
+      var newStub = stub().of('src');
+      assert.isFunction(newStub.src);
     });
 
     it('handles a non-stubbed assignments', function(){
