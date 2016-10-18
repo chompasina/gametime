@@ -42,22 +42,4 @@ describe('junkFood', function(){
       assert.equal(junkFood.y, 101);
     });
   });
-
-  context('dropJunkFood', function(){
-    var junkFood = new JunkFood();
-
-    it('should assign a random healthy food type', function(){
-      var newFoodHash = junkFood.dropJunkFood();
-      var newFood = new JunkFood(newFoodHash);
-      assert.notEqual(newFood['type'], 'cheeto');
-    });
-
-    it('should assign a random junk food color', function(){
-      var newFoodHash = junkFood.dropJunkFood();
-      var newFood = new JunkFood(newFoodHash);
-      assert.notEqual(newFood['color'], 'yellow');
-    });
-  });
-
-
 });
