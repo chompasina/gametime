@@ -22,10 +22,6 @@ describe('World', function(){
     it('should have a tray', function(){
       assert.isObject(world.tray);
     });
-
-    it('should have an overlord', function(){
-      assert.isObject(world.overlord);
-    });
   });
 
   context('with given attributes', function(){
@@ -40,7 +36,7 @@ describe('World', function(){
     });
 
     it('can accept a context', function(){
-      assert.equal(world.context, "apple");
+      assert.equal(world.ctx, "apple");
     });
   });
 
@@ -83,16 +79,12 @@ describe('draw canvas', function(){
 });
 
 describe('draw', function(){
-  var context = stub().of('fillRect').of('beginPath').of('arc').of('fill').of('clearRect');
+  var context = stub().of('fillRect').of('clearRect');
   var world = new World(600, 600, context);
   world.draw();
 
   it('should call all of the draw functions', function(){
-    assert.equal(context.fillRect.calls.length, 4);
-    assert.equal(context.beginPath.calls.length, 1);
-    assert.equal(context.arc.calls.length, 0);
+    assert.equal(context.fillRect.calls.length, 2);
     assert.equal(context.clearRect.calls.length, 1);
-    assert.equal(context.fill.calls.length, 1);
-
   });
 });
