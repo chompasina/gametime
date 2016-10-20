@@ -9,8 +9,13 @@ body {
   background-image: url('./images/lunchroom-background.png') !important;
 }
 
+.panel-heading {
+  font-family: 'Bungee Inline', cursive !important;
+}
 .panel-body {
   color: green !important;
+  -webkit-font-smoothing: antialiased !important;
+  font-family: 'Bungee Inline', cursive !important;
 }
 
 #title {
@@ -25,13 +30,15 @@ body {
 
 .container { margin-top: 10px; }
 
-li {
+ol {
+  -webkit-font-smoothing: antialiased !important;
+  font-family: 'Bungee Inline', cursive !important;
   color: black !important;
-  font-weight: bold;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 h2 {
+  font-family: 'Bungee Inline', cursive !important;
   color: black !important;
 }
 
