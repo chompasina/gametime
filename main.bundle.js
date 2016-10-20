@@ -317,7 +317,7 @@
 
 
 	// module
-	exports.push([module.id, ".game-canvas {\n  border: 1px dashed;\n  background-color: #888;\n  margin: auto;\n  display: none;\n}\n\n.container { margin-top: 10px; }\n", ""]);
+	exports.push([module.id, ".game-canvas {\n  border: 1px dashed;\n  background-color: #888;\n  /*background: url('./images/lunchroom-background.jpg')*/\n  margin: auto;\n  display: none;\n}\n\n.container { margin-top: 10px; }\n", ""]);
 
 	// exports
 
@@ -13525,7 +13525,7 @@
 /* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "4e76206026118ffe4e8621d63a010fe2.png";
+	module.exports = __webpack_require__.p + "03528c1a264179f2a9df9a3f06e0785e.png";
 
 /***/ },
 /* 102 */
