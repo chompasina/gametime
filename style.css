@@ -45,3 +45,10 @@ h2 {
 h1 {
   color: black !important;
 }
+
+h3 {
+  font-family: 'Bungee Inline', cursive !important;
+  color: black !important;
+  margin-bottom: -15px;
+  font-size: 20px;
+}

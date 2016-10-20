@@ -17,9 +17,6 @@
 </head>
 <body>
 
-  <div class="score-card">
-    <h3 id="score-game" style="text-align:center">Score:</h3>
-  </div>
   <h1 id="title">Empty Calorie Overlord</h1>
   <h1 id="title">& the Health Food Revival</h1>
   <div id="healthometer-container"></div>
@@ -36,7 +33,7 @@
         </div>
 
         <div class="clearfix"></div>
-
+  
   <canvas id="game"
           class="game-canvas"
           width="600px"
@@ -46,7 +43,13 @@
 
     </div>
 
-  <div class="col-md-4" style="margin-top:65px">
+  <div class="col-md-4" style="margin-top:40px">
+    <div class="score-card">
+      <h3 id="score-game" style="text-align:center">Score:</h3>
+    </div>
+    <div id="level" style="text-align:center"> 
+      <h2>Level 1</h2>
+    </div>
     <div id="instructions">
       <div class="panel panel-success">
         <div class="panel-heading">
@@ -66,8 +69,8 @@
     </div>
   </div>
   <div>
-    <h2>High Scores:</h2>
-      <ul id="high-scores"></ul>
+    <h2 style="text-align:center">High Scores:</h2>
+      <ul style="text-align:center" id="high-scores"></ul>
   </div>
   <!--/row--></div>
   <!--/container--></div>
