@@ -14,3 +14,12 @@ body {
 }
 
 .container { margin-top: 10px; }
+
+li {
+  color: green !important;
+  font-size: 25px;
+}
+
+h2 {
+  color: green !important;
+}
