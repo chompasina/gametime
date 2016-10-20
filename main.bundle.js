@@ -102,6 +102,7 @@
 	  document.getElementById('instructions').style = "display: none";
 	  document.getElementById('score-title').style = "display: block";
 	  document.getElementById('high-scores').style = "display: block";
+	  document.getElementById('level').innerHTML = "<h2>Level 1</h2>";
 	  makeNewGame();
 	  requestAnimationFrame(function gameLoop() {
 	    if (trayCollision.total < 0 && gameRunning || trayCollision.total >= 600 && gameRunning || !gameRunning) {
