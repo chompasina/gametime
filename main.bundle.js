@@ -99,6 +99,10 @@
 	}
 
 	startButton.addEventListener('click', function () {
+	  var gameAudio = document.createElement("audio");
+	  gameAudio.src = "Get_Outside.mp3";
+	  gameAudio.play();
+	  gameAudio.pause();
 	  document.getElementById('instructions').style = "display: none";
 	  document.getElementById('score-title').style = "display: block";
 	  document.getElementById('high-scores').style = "display: block";
