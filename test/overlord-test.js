@@ -1,8 +1,6 @@
 const chai = require('chai');
 const assert = chai.assert;
-const stub = require('./support/stub');
 const Overlord = require('../lib/overlord.js');
-const World = require('../lib/world.js');
 
 describe('Overlord', function(){
   context('with default attributes', function(){
@@ -59,34 +57,4 @@ describe('Overlord', function(){
       assert.equal(overlord.speed, 45);
     });
   });
-
-//   context('movement', function(){
-//     it('can oscillate', function(){
-//       let world = new World(600, 600);
-//       let overlord = new Overlord();
-//       assert.equal(overlord.x, 0);
-//       assert.equal(overlord.y, 10);
-//       overlord.oscillate(world);
-//       assert.isAbove(overlord.x, 0);
-//       assert.equal(overlord.y, 10);
-//     });
-//   });
 });
-
-// describe('draw', function(){
-//   var ctx   = stub().of("drawImage");
-//   var image = stub().of("src");
-//   var overlord = new Overlord();
-//   overlord.draw(image, ctx);
-//
-//   it('should call fillRect on the canvas', function(){
-//     assert.equal(ctx.drawImage.calls.length, 1);
-//   });
-//
-//   it('should pass in the image, x, y, width, and height to fillRect', function(){
-//     assert.equal(context.fillRect.calls[0][1], overlord.x);
-//     assert.equal(context.fillRect.calls[0][2], overlord.y);
-//     assert.equal(context.fillRect.calls[0][3], overlord.width);
-//     assert.equal(context.fillRect.calls[0][4], overlord.height);
-//   });
-// });
