@@ -3,26 +3,68 @@
 <head>
   <meta charset="utf-8">
   <title>Game Time</title>
-    <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="score-card">
     <h3 id="score-game">Score:</h3>
   </div>
-  <button id="start">Start</button>
+
+  <div id="healthometer-container"></div>
+  <div class="container">
+  <div class="row">
+  <div class="col-md-8">
+
+  <!--begin progress bar-->
+  <h1 id="progress-bar">Health-o-meter</h1>
+  <div class="pull-left">0   </div>
+  <div class="pull-right">  100</div>
+  <div class="progress progress-striped active">
+  <div id="total-points" class="progress-bar progress-bar-success" role="progressbar" style="width:0%"> <strong>0 Health points</strong> </div>
+  <div id="win-points" class="progress-bar progress-bar-danger" role="progressbar" style="width:100%"> <strong>100 Needed to win</strong> </div>
+</div>
+  <div class="clearfix"></div>
+  <!--end progress bar-->
+
   <canvas id="game"
           class="game-canvas"
           width="600px"
           height="600px"></canvas>
 
-  <script src="main.bundle.js"></script>
 
-  <div>
-    <h2>High Scores:</h2>
-    <ul id="high-scores"></ul>
+  <!--/col--></div>
+  <div class="col-md-4">
+    <div id="instructions">
+      <div class="panel panel-success">
+    <div class="panel-heading">
+      <h3 class="panel-title">Instructions</h3>
+    </div>
+    <div class="panel-body">
+      <p>Left and right arrow keys move "Tray"</p>
+      <p>Catch dropping health foods to score health points</p>
+      <p>Avoid catching junk foods which subtract health points</p>
+      <p>Pass Round 1 with 1000 points</p>
+      <p>Pass Round 2 with 2000 points</p>
+      <p>Win the game with 3000 points!</p>
+      <p>Hint: healthiest health foods = more points</p>
+    </div>
   </div>
 
+      <div id="start">
+      <button type="button" class="btn btn-success btn-lg">Start Game</button>
+    </div>
+    </div>
+  </div>
+  <div>
+    <h2>High Scores:</h2>.
+    <ul id="high-scores"></ul>
+  </div>
+  <!--/row--></div>
+  <!--/container--></div>
+
+
 <a href="http://www.freepik.com/free-photos-vectors/food">Food vector designed by Bakar015 - Freepik.com</a>
+<script src="main.bundle.js"></script>
 </body>
 </html>
