@@ -13,6 +13,16 @@ body {
   color: green !important;
 }
 
+#title {
+  font-family: 'Bungee Inline', cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+.score-card {
+  text-align: center;
+}
+
 .container { margin-top: 10px; }
 
 li {
