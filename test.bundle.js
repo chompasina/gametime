@@ -258,19 +258,7 @@
 	module.exports = HealthFood;
 
 /***/ },
-/* 100 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	function RandomHealthFood() {
-	  var healthFoods = [{ "type": "broccoli", "color": "green", "score": "9", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/broccoli.png" }, { "type": "beet", "color": "blue", "score": "8", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/beet.png" }, { "type": "redPepper", "color": "red", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/red-pepper.png" }, { "type": "redCabbage", "color": "purple", "score": "24", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/red-cabbage.png" }, { "type": "artichoke", "color": "green", "score": "9", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/artichoke.png" }, { "type": "banana", "color": "yellow", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/banana.png" }, { "type": "blueberries", "color": "blue", "score": 24, 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/blueberries.png" }, { "type": "cherry", "color": "red", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/cherry.png" }, { "type": "cucumber", "color": "green", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/cucumber.png" }, { "type": "eggplant", "color": "purple", "score": "4", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/eggplant.png" }, { "type": "grape", "color": "green", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/grape.png" }, { "type": "onion", "color": "purple", "score": "5", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/onion.png" }, { "type": "peas", "color": "green", "score": "3", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/peas.png" }, { "type": "strawberry", "color": "red", "score": "15", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/strawberry.png" }, { "type": "radish", "color": "red", "score": "200", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/radish.png" }, { "type": "tomato", "color": "red", "score": "200", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/tomato.png" }, { "type": "yellowPepper", "color": "red", "score": "10", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/yellow-pepper.png" }, { "type": "orange", "color": "red", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/orange.png" }, { "type": "carrot", "color": "orange", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/carrot.png" }];
-	  return healthFoods[Math.floor(Math.random() * healthFoods.length)];
-	}
-
-	module.exports = RandomHealthFood;
-
-/***/ },
+/* 100 */,
 /* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -627,9 +615,9 @@
 	var assert = chai.assert;
 	__webpack_require__(157);
 	__webpack_require__(158);
+	__webpack_require__(159);
 	__webpack_require__(160);
 	__webpack_require__(161);
-	__webpack_require__(162);
 	__webpack_require__(163);
 
 	describe('our test bundle', function () {
@@ -8952,7 +8940,6 @@
 
 	var chai = __webpack_require__(117);
 	var assert = chai.assert;
-	// const stub = require('./support/stub');
 	var HealthFood = __webpack_require__(99);
 
 	describe('healthFood', function () {
@@ -8982,6 +8969,10 @@
 	    it('should have a speed', function () {
 	      assert.equal(healthFood.speed, 0.5);
 	    });
+
+	    it('should not have a color', function () {
+	      assert.equal(healthFood.color, null);
+	    });
 	  });
 
 	  context('with given attributes', function () {
@@ -9010,6 +9001,15 @@
 	      assert.equal(healthFood.speed, 50);
 	    });
 	  });
+
+	  context('move', function () {
+	    var healthFood = new HealthFood();
+	    it('should move the y coordinate', function () {
+	      assert.equal(healthFood.y, 0);
+	      healthFood.move();
+	      assert.equal(healthFood.y, 0.5);
+	    });
+	  });
 	});
 
 /***/ },
@@ -9020,7 +9020,6 @@
 
 	var chai = __webpack_require__(117);
 	var assert = chai.assert;
-	var stub = __webpack_require__(159);
 	var JunkFood = __webpack_require__(103);
 
 	describe('junkFood', function () {
@@ -9050,6 +9049,37 @@
 	    it('should have a speed', function () {
 	      assert.equal(junkFood.speed, 0.5);
 	    });
+
+	    it('shoudld not have a score', function () {
+	      assert.equal(junkFood.score, null);
+	    });
+	  });
+
+	  context('with given attributes', function () {
+	    it('can accept a new x-coordinate', function () {
+	      var junkFood = new JunkFood({ x: 50 });
+	      assert.equal(junkFood.x, 50);
+	    });
+
+	    it('can accept a new y-coordinate', function () {
+	      var junkFood = new JunkFood({ y: 50 });
+	      assert.equal(junkFood.y, 50);
+	    });
+
+	    it('can accept a new height', function () {
+	      var junkFood = new JunkFood({ height: 50 });
+	      assert.equal(junkFood.height, 50);
+	    });
+
+	    it('can accept a new width', function () {
+	      var junkFood = new JunkFood({ width: 50 });
+	      assert.equal(junkFood.width, 50);
+	    });
+
+	    it('can accept a new speed', function () {
+	      var junkFood = new JunkFood({ speed: 50 });
+	      assert.equal(junkFood.speed, 50);
+	    });
 	  });
 
 	  context('move', function () {
@@ -9065,44 +9095,13 @@
 
 /***/ },
 /* 159 */
-/***/ function(module, exports) {
-
-	// attribution: http://matthewmanela.com/blog/a-simple-javascript-stubbing-function/
-
-	"use strict";
-
-	function stub() {
-	  return {
-	    of: function of(name, callback, returnValue) {
-	      this[name] = function () {
-	        var args = Array.prototype.slice.call(arguments);
-	        this[name].calls.push(args);
-	        var ret = null;
-	        if (callback) {
-	          ret = callback.apply(this, args);
-	        }
-	        if (returnValue) return returnValue;
-	        return ret;
-	      };
-	      this[name].calls = [];
-	      return this;
-	    }
-	  };
-	}
-
-	module.exports = stub;
-
-/***/ },
-/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var chai = __webpack_require__(117);
 	var assert = chai.assert;
-	var stub = __webpack_require__(159);
 	var Overlord = __webpack_require__(101);
-	var World = __webpack_require__(97);
 
 	describe('Overlord', function () {
 	  context('with default attributes', function () {
@@ -9159,47 +9158,16 @@
 	      assert.equal(overlord.speed, 45);
 	    });
 	  });
-
-	  //   context('movement', function(){
-	  //     it('can oscillate', function(){
-	  //       let world = new World(600, 600);
-	  //       let overlord = new Overlord();
-	  //       assert.equal(overlord.x, 0);
-	  //       assert.equal(overlord.y, 10);
-	  //       overlord.oscillate(world);
-	  //       assert.isAbove(overlord.x, 0);
-	  //       assert.equal(overlord.y, 10);
-	  //     });
-	  //   });
 	});
 
-	// describe('draw', function(){
-	//   var ctx   = stub().of("drawImage");
-	//   var image = stub().of("src");
-	//   var overlord = new Overlord();
-	//   overlord.draw(image, ctx);
-	//
-	//   it('should call fillRect on the canvas', function(){
-	//     assert.equal(ctx.drawImage.calls.length, 1);
-	//   });
-	//
-	//   it('should pass in the image, x, y, width, and height to fillRect', function(){
-	//     assert.equal(context.fillRect.calls[0][1], overlord.x);
-	//     assert.equal(context.fillRect.calls[0][2], overlord.y);
-	//     assert.equal(context.fillRect.calls[0][3], overlord.width);
-	//     assert.equal(context.fillRect.calls[0][4], overlord.height);
-	//   });
-	// });
-
 /***/ },
-/* 161 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var chai = __webpack_require__(117);
 	var assert = chai.assert;
-	var stub = __webpack_require__(159);
 
 	var Tray = __webpack_require__(98);
 
@@ -9318,14 +9286,14 @@
 	// });
 
 /***/ },
-/* 162 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var chai = __webpack_require__(117);
 	var assert = chai.assert;
-	var stub = __webpack_require__(159);
+	var stub = __webpack_require__(162);
 	var World = __webpack_require__(97);
 
 	describe('World', function () {
@@ -9415,17 +9383,42 @@
 	});
 
 /***/ },
+/* 162 */
+/***/ function(module, exports) {
+
+	// attribution: http://matthewmanela.com/blog/a-simple-javascript-stubbing-function/
+
+	"use strict";
+
+	function stub() {
+	  return {
+	    of: function of(name, callback, returnValue) {
+	      this[name] = function () {
+	        var args = Array.prototype.slice.call(arguments);
+	        this[name].calls.push(args);
+	        var ret = null;
+	        if (callback) {
+	          ret = callback.apply(this, args);
+	        }
+	        if (returnValue) {
+	          return returnValue, ret;
+	        }
+	      };
+	      this[name].calls = [];
+	      return this;
+	    }
+	  };
+	}
+
+	module.exports = stub;
+
+/***/ },
 /* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var chai = __webpack_require__(117);
-	var assert = chai.assert;
-	var stub = __webpack_require__(159);
 	__webpack_require__(116);
-	var HealthFood = __webpack_require__(99);
-	var RandomHealthFood = __webpack_require__(100);
 
 /***/ },
 /* 164 */
