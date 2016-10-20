@@ -1,9 +1,19 @@
 .game-canvas {
-  border: 1px dashed;
-  background-color: #888;
-  /*background: url('./images/lunchroom-background.jpg')*/
   margin: auto;
   display: none;
+}
+
+canvas {
+  color: blue !important;
+}
+
+body {
+  color: white !important;
+  background-image: url('./images/lunchroom-background.png') !important;
+}
+
+.panel-body {
+  color: green !important;
 }
 
 .container { margin-top: 10px; }
