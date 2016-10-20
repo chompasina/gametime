@@ -1,6 +1,5 @@
 const chai = require('chai');
 const assert = chai.assert;
-// const stub = require('./support/stub');
 const HealthFood = require('../lib/health-food');
 
 describe('healthFood', function(){
@@ -30,6 +29,10 @@ describe('healthFood', function(){
     it('should have a speed', function(){
       assert.equal(healthFood.speed, 0.5);
     });
+
+    it('should not have a color', function(){
+      assert.equal(healthFood.color, null);
+    });
   });
 
   context('with given attributes', function(){
@@ -56,6 +59,15 @@ describe('healthFood', function(){
     it('can accept a new speed', function(){
       let healthFood = new HealthFood({speed: 50});
       assert.equal(healthFood.speed, 50);
+    });
+  });
+
+  context('move', function(){
+    var healthFood = new HealthFood();
+    it('should move the y coordinate', function(){
+      assert.equal(healthFood.y, 0);
+      healthFood.move();
+      assert.equal(healthFood.y, 0.5);
     });
   });
 });

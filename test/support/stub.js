@@ -10,8 +10,9 @@ function stub() {
         if(callback){
           ret = callback.apply(this, args);
         }
-        if(returnValue) return returnValue;
-        return ret;
+        if(returnValue) {
+          return returnValue, ret;
+      }
       };
       this[name].calls = [];
       return this;
