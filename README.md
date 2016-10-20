@@ -8,7 +8,7 @@
 Empty Calorie Adventure
 
 ### Description
-Gametime is a Module 4 project at Turing. We are building a game with a healthy eating theme. This game will eventually be included in our Pahlka Posse's healthy eating app for children.
+Gametime is a Module 4 project at Turing. We are building a game with a healthy eating theme. This game is was built using JavaScript, jQuery and HTML5 Canvas. Testing is done with Mocha and Chai.
 
 
 ### How to Run

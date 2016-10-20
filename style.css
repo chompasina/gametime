@@ -1,6 +1,8 @@
 .game-canvas {
   border: 1px dashed;
-  background-color: #888;
+  background-color: red;
+  /*background: url('./images/lunchroom-background.png');*/
+  /*background: url('./images/lunchroom-background.jpg')*/
   margin: auto;
   display: none;
 }
