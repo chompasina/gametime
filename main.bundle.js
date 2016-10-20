@@ -317,7 +317,7 @@
 
 
 	// module
-	exports.push([module.id, ".game-canvas {\n  border: 1px dashed;\n  background-color: #888;\n  /*background: url('./images/lunchroom-background.jpg')*/\n  margin: auto;\n  display: none;\n}\n\n.container { margin-top: 10px; }\n", ""]);
+	exports.push([module.id, ".game-canvas {\n  border: 1px dashed;\n  background-color: #888;\n  \n  /*background: url('./images/lunchroom-background.jpg')*/\n  margin: auto;\n  display: none;\n}\n\n.title {\n  font-family: 'Bungee Inline', cursive;\n}\n\n.container { margin-top: 10px; }\n", ""]);
 
 	// exports
 
