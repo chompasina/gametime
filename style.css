@@ -26,10 +26,15 @@ body {
 .container { margin-top: 10px; }
 
 li {
-  color: green !important;
+  color: black !important;
+  font-weight: bold;
   font-size: 25px;
 }
 
 h2 {
-  color: green !important;
+  color: black !important;
+}
+
+h1 {
+  color: black !important;
 }
