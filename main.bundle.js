@@ -13655,14 +13655,16 @@
 	}
 
 	ScoreBoard.prototype.loadStoredScores = function () {
-	  this.scores = localStorage.getItem('scores').split(",");
-	  var list = this.list;
-	  var descendingScores = _.sortBy(this.scores).reverse();
-	  descendingScores.forEach(function (score) {
-	    var scoreItem = document.createElement('li');
-	    scoreItem.innerText = score;
-	    list.appendChild(scoreItem);
-	  });
+	  if (this.scores) {
+	    this.scores = localStorage.getItem('scores').split(",");
+	    var list = this.list;
+	    var descendingScores = _.sortBy(this.scores).reverse();
+	    descendingScores.forEach(function (score) {
+	      var scoreItem = document.createElement('li');
+	      scoreItem.innerText = score;
+	      list.appendChild(scoreItem);
+	    });
+	  }
 	};
 
 	ScoreBoard.prototype.addHighScoreToPage = function (score) {
