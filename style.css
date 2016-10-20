@@ -1,10 +1,7 @@
 .game-canvas {
   margin: auto;
   display: none;
-}
-
-canvas {
-  color: blue !important;
+  padding-bottom: 20px;
 }
 
 body {
