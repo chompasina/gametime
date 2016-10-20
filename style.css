@@ -1,9 +1,21 @@
 .game-canvas {
-  border: 1px dashed;
-  background-color: #888;
-  /*background: url('./images/lunchroom-background.jpg')*/
   margin: auto;
   display: none;
+  padding-bottom: 20px;
+}
+
+body {
+  color: white !important;
+  background-image: url('./images/lunchroom-background.png') !important;
+}
+
+.panel-heading {
+  font-family: 'Bungee Inline', cursive !important;
+}
+.panel-body {
+  color: green !important;
+  -webkit-font-smoothing: antialiased !important;
+  font-family: 'Bungee Inline', cursive !important;
 }
 
 #title {
@@ -17,3 +29,19 @@
 }
 
 .container { margin-top: 10px; }
+
+ol {
+  -webkit-font-smoothing: antialiased !important;
+  font-family: 'Bungee Inline', cursive !important;
+  color: black !important;
+  font-size: 30px;
+}
+
+h2 {
+  font-family: 'Bungee Inline', cursive !important;
+  color: black !important;
+}
+
+h1 {
+  color: black !important;
+}
