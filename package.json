@@ -39,6 +39,7 @@
     "webpack-dev-server": "^1.10.1"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "bootstrap-webpack": "0.0.5",
     "exports-loader": "^0.6.3",
     "extract-text-webpack-plugin": "^1.0.1",
