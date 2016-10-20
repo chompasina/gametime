@@ -13655,7 +13655,7 @@
 	}
 
 	ScoreBoard.prototype.loadStoredScores = function () {
-	  if (this.scores) {
+	  if (this.scores.length > 0) {
 	    this.scores = localStorage.getItem('scores');
 	    var storedScores = this.scores.split(",");
 	    var list = this.list;
