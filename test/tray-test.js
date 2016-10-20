@@ -29,7 +29,7 @@ describe('Tray', function(){
     });
 
     it('should have a speed', function(){
-      assert.equal(tray.speed, 10);
+      assert.equal(tray.speed, 15);
     });
   });
 
