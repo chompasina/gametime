@@ -1,33 +1,32 @@
-# Iteration 1 Documentation
-## Create Tray
+# Creating a Game Documentation
+
+## Contributing to Pahlka Posse
+  * In order to efficiently share our knowledge within our posse, we decided to document the steps of creating this game. We will do our best to anticipate confusing aspects of the project and cover those topics more in-depth as well as giving a high-level overview of the project. 
 
 ----
 ### Lesson Plans Used
-  * For Testing
-    * Intro to Mocha//Unit level Testing in JavaScript: [lessonPlan](https://github.com/turingschool-examples/gametime-testing-journey/)
+  * Link to lesson plans given to us during the course of the project
 
 -----
 ### Testing the Tray Functionality
 
-#### What is the 'tray' ?
-* Our game consists of a child in 
+#### What is this component?
+  * Describe components of the code in detail. How does this piece of the project interact with the others?
 
 ----
 ## Code
-#### Important Notes on Implementation :
 
-1. Link to Unit Test: [tray-test.js](https://github.com/chompasina/gametime/blob/master/test/tray-test.js) // Link to File Tested: [tray.js](https://github.com/chompasina/gametime/blob/master/lib/tray.js)
+#### Important Notes on Implementation:
+
+1. We'll include any important notes here. 
+
+2. In our master documentation file, we'll include the following run test instructions:
 
 * `npm test ./test/tray-test.js`
   * runs individual test
 
-* Function Tested: `function Tray(settings)`
-  * `context('with default attributes')`
+* We'll describe the function tested like this: `function Tray(settings)`
     * Tests that our Tray is instantiated with the following attributes:
       * width
-        * width of tray
-        
-* Functions Tested: 
-`Tray.prototype.moveRight` // `Tray.prototype.moveLeft`
-  * `context('movement')`
-    * Tests tray's ability to move _left_ / _right_
+      * height
+
