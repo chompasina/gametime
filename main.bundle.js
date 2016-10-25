@@ -99,12 +99,21 @@
 	}
 
 	startButton.addEventListener('click', function () {
+	  var gameAudio = document.createElement("audio");
+	  gameAudio.src = "Get_Outside.mp3";
+	  gameAudio.play();
+	  gameAudio.pause();
+	  document.getElementById('instructions').style = "display: none";
+	  document.getElementById('score-title').style = "display: block";
+	  document.getElementById('high-scores').style = "display: block";
+	  document.getElementById('level').innerHTML = "<h2>Level 1</h2>";
 	  makeNewGame();
 	  requestAnimationFrame(function gameLoop() {
 	    if (trayCollision.total < 0 && gameRunning || trayCollision.total >= 600 && gameRunning || !gameRunning) {
 	      endGame();
 	    }
 	    beginGame();
+	    checkLevel();
 	    reqAnimFrameID = requestAnimationFrame(gameLoop);
 	  });
 	  document.addEventListener('keydown', function (event) {
@@ -140,16 +149,29 @@
 	  oscillate(overlord, world);
 	}
 
-	function endGame() {
+	function checkLevel() {
+	  var level = document.getElementById('level');
 	  if (trayCollision.total >= 200 && trayCollision.total < 400) {
-	    alert("You made it to the next level!");
+	    level.innerHTML = "<h3>Level 2</h3>";
 	  } else if (trayCollision.total >= 400 && trayCollision.total < 600) {
-	    alert("You made it to the last level!");
-	  } else if (trayCollision.total >= 600) {
+	    level.innerHTML = "<h3>Level 3</h3>";
+	  }
+	}
+
+	function endGame() {
+	  if (trayCollision.total >= 600) {
 	    addScore(trayCollision.total);
 	    alert("You won! Your score was " + trayCollision.total + " points.");
+	    document.getElementById('instructions').style = "display: block";
+	    document.getElementById('start-btn').style = "display: block";
+	    document.getElementById('score-title').style = "display: none";
+	    document.getElementById('high-scores').style = "display: none";
 	  } else if (trayCollision.total < 0) {
 	    alert("You lost! Eat more vegetables next time to defeat the Empty Calorie Overlord.");
+	    document.getElementById('instructions').style = "display: block";
+	    document.getElementById('start-btn').style = "display: block";
+	    document.getElementById('score-title').style = "display: none";
+	    document.getElementById('high-scores').style = "display: none";
 	  }
 	  for (var i = 0; i < 1000; i++) {
 	    window.clearInterval(i);
@@ -321,7 +343,7 @@
 
 
 	// module
-	exports.push([module.id, ".game-canvas {\n  margin: auto;\n  display: none;\n  padding-bottom: 20px;\n}\n\nbody {\n  color: white !important;\n  background-image: url(" + __webpack_require__(73) + ") !important;\n}\n\n.panel-heading {\n  font-family: 'Bungee Inline', cursive !important;\n}\n.panel-body {\n  color: green !important;\n  -webkit-font-smoothing: antialiased !important;\n  font-family: 'Bungee Inline', cursive !important;\n}\n\n#title {\n  font-family: 'Bungee Inline', cursive;\n  font-size: 50px;\n  text-align: center;\n}\n\n.score-card {\n  text-align: center;\n}\n\n.container { margin-top: 10px; }\n\nol {\n  -webkit-font-smoothing: antialiased !important;\n  font-family: 'Bungee Inline', cursive !important;\n  color: black !important;\n  font-size: 30px;\n}\n\nh2 {\n  font-family: 'Bungee Inline', cursive !important;\n  color: black !important;\n}\n\nh1 {\n  color: black !important;\n}\n", ""]);
+	exports.push([module.id, ".game-canvas {\n  margin: auto;\n  display: none;\n  padding-bottom: 20px;\n}\n\nbody {\n  color: white !important;\n  background-image: url(" + __webpack_require__(73) + ") !important;\n}\n\n.panel-heading {\n  font-family: 'Bungee Inline', cursive !important;\n}\n.panel-body {\n  color: green !important;\n  -webkit-font-smoothing: antialiased !important;\n  font-family: 'Bungee Inline', cursive !important;\n}\n\n#title {\n  font-family: 'Bungee Inline', cursive;\n  font-size: 50px;\n  text-align: center;\n}\n\n.score-card {\n  text-align: center;\n}\n\n.container { margin-top: 10px; }\n\nol {\n  -webkit-font-smoothing: antialiased !important;\n  font-family: 'Bungee Inline', cursive !important;\n  color: black !important;\n  font-size: 30px;\n}\n\nh2 {\n  font-family: 'Bungee Inline', cursive !important;\n  color: black !important;\n}\n\nh1 {\n  color: black !important;\n}\n\nh3 {\n  font-family: 'Bungee Inline', cursive !important;\n  color: black !important;\n  margin-bottom: -15px;\n  font-size: 20px;\n}\n\n#high-scores {\n  display: none;\n  text-align: center;\n}\n\n#score-title {\n  display: none;\n  text-align: center;\n}\n", ""]);
 
 	// exports
 
@@ -13502,7 +13524,7 @@
 	"use strict";
 
 	function RandomHealthFood() {
-	  var healthFoods = [{ "type": "broccoli", "color": "green", "score": "9", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/broccoli.png" }, { "type": "beet", "color": "blue", "score": "8", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/beet.png" }, { "type": "redPepper", "color": "red", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/red-pepper.png" }, { "type": "redCabbage", "color": "purple", "score": "24", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/red-cabbage.png" }, { "type": "artichoke", "color": "green", "score": "9", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/artichoke.png" }, { "type": "banana", "color": "yellow", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/banana.png" }, { "type": "blueberries", "color": "blue", "score": 24, 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/blueberries.png" }, { "type": "cherry", "color": "red", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/cherry.png" }, { "type": "cucumber", "color": "green", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/cucumber.png" }, { "type": "eggplant", "color": "purple", "score": "4", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/eggplant.png" }, { "type": "grape", "color": "green", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/grape.png" }, { "type": "onion", "color": "purple", "score": "5", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/onion.png" }, { "type": "peas", "color": "green", "score": "3", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/peas.png" }, { "type": "strawberry", "color": "red", "score": "15", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/strawberry.png" }, { "type": "radish", "color": "red", "score": "200", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/radish.png" }, { "type": "tomato", "color": "red", "score": "200", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/tomato.png" }, { "type": "yellowPepper", "color": "red", "score": "10", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/yellow-pepper.png" }, { "type": "orange", "color": "red", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/orange.png" }, { "type": "carrot", "color": "orange", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/carrot.png" }];
+	  var healthFoods = [{ "type": "broccoli", "color": "green", "score": "9", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/broccoli.png" }, { "type": "beet", "color": "blue", "score": "8", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/beet.png" }, { "type": "redPepper", "color": "red", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/red-pepper.png" }, { "type": "redCabbage", "color": "purple", "score": "240", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/red-cabbage.png" }, { "type": "artichoke", "color": "green", "score": "9", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/artichoke.png" }, { "type": "banana", "color": "yellow", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/banana.png" }, { "type": "blueberries", "color": "blue", "score": 24, 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/blueberries.png" }, { "type": "cherry", "color": "red", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/cherry.png" }, { "type": "cucumber", "color": "green", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/cucumber.png" }, { "type": "eggplant", "color": "purple", "score": "4", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/eggplant.png" }, { "type": "grape", "color": "green", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/grape.png" }, { "type": "onion", "color": "purple", "score": "5", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/onion.png" }, { "type": "peas", "color": "green", "score": "3", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/peas.png" }, { "type": "strawberry", "color": "red", "score": "15", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/strawberry.png" }, { "type": "radish", "color": "red", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/radish.png" }, { "type": "tomato", "color": "red", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/tomato.png" }, { "type": "yellowPepper", "color": "red", "score": "10", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/yellow-pepper.png" }, { "type": "orange", "color": "red", "score": "7", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/orange.png" }, { "type": "carrot", "color": "orange", "score": "2", 'x': Math.random() * (600 - 30) + 15, 'y': 0, 'image': "../images/carrot.png" }];
 	  return healthFoods[Math.floor(Math.random() * healthFoods.length)];
 	}
 
