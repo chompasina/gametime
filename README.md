@@ -5,6 +5,8 @@ Empty Calorie Overlord & The Healthy Food Revival
 ### Description
 Gametime is a Module 4 project at Turing. We built a game with a healthy eating theme. This game uses JavaScript, jQuery and HTML5 Canvas. Testing is done with Mocha and Chai.
 
+Play game in production [here](https://chompasina.github.io/gametime/)!
+
 ### Team
 - [Tommasina](https://github.com/chompasina)
 - [Karina](https://github.com/karinamzalez)
@@ -14,7 +16,7 @@ Gametime is a Module 4 project at Turing. We built a game with a healthy eating 
 ### How to Run
 Clone
 ```
-git clone git@github.com:kjs222/gametime.git
+git clone git@github.com:chompasina/gametime.git
 ```
 
 To install the dependencies:
