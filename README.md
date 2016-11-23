@@ -7,6 +7,9 @@ Gametime is a Module 4 project at Turing. We built a game with a healthy eating 
 
 Play game in production [here](https://chompasina.github.io/gametime/)!
 
+Example Game Play: 
+![Game](http://g.recordit.co/l6QW1wktCz.gif)
+
 ### Team
 - [Tommasina](https://github.com/chompasina)
 - [Karina](https://github.com/karinamzalez)
